@@ -1,30 +1,41 @@
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import BusinessSpectrum from "./components/BusinessSpectrum";
-import Features from "./components/Features";
-import GrowthChart from "./components/GrowthChart";
-import HowItWorks from "./components/HowItWorks";
-import Testimonials from "./components/Testimonials";
-import Stats from "./components/Stats";
-import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
+import PageIntro from "./components/PageIntro";
+import PageTransition from "./components/PageTransition";
+import useSmoothScroll from "./hook/usesmoothscroll";
 
-/** Single-page landing site for PraTej Solutions. */
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Solutions from "./pages/Solutions";
+import Services from "./pages/Services";
+import Demo from "./pages/Demo";
+
+/** Multi-page PraTej Solutions site with route-level transitions. */
 export default function App() {
+  useSmoothScroll();
+  const location = useLocation();
+
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream cursor-none-desktop">
+      <PageIntro />
+      <CustomCursor />
       <Navbar />
-      <main>
-        <Hero />
-        <BusinessSpectrum />
-        <Features />
-        <GrowthChart />
-        <HowItWorks />
-        <Testimonials />
-        <Stats />
-        <CTA />
-      </main>
-      <Footer />
+      <PageTransition locationKey={location.pathname}>
+        <main>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/demo" element={<Demo />} />
+          </Routes>
+        </main>
+        <Footer />
+      </PageTransition>
     </div>
   );
 }

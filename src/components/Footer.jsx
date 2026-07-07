@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaLinkedin, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import { footer } from "../data/content";
 
@@ -21,9 +22,9 @@ export default function Footer() {
         <ul className="flex flex-wrap gap-6 text-sm text-inksoft font-body">
           {footer.links.map((l) => (
             <li key={l.label}>
-              <a href={l.href} className="hover:text-ink transition-colors">
+              <Link to={l.href} className="hover:text-ink transition-colors">
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

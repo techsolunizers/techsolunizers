@@ -6,6 +6,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis smooth-scroll requires the browser's native smooth-scroll off
+   and applies its own transform-based scrolling instead. */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Hide native cursor on desktop where our custom cursor takes over */
+@media (pointer: fine) {
+  .cursor-none-desktop, .cursor-none-desktop * {
+    cursor: none;
+  }
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: #FBF9F4;

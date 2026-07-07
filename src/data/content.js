@@ -1,16 +1,18 @@
-// All copy, testimonials, stats and chart data for the PraTej Solutions landing page.
+// All copy, testimonials, stats and chart data for the PraTej Solutions site.
 // Kept in one place so non-technical editors can update text without touching components.
 
 export const nav = {
-  logo: "PraTej Solutions",
+  logo: "PraTej",
+  logoSuffix: "Solutions",
   links: [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#features" },
-    { label: "Solutions", href: "#spectrum" },
-    { label: "About", href: "#growth" },
-    { label: "Contact", href: "#cta" },
+    { label: "Home", href: "/", n: "01" },
+    { label: "Solutions", href: "/solutions", n: "02" },
+    { label: "Services", href: "/services", n: "03" },
+    { label: "About", href: "/about", n: "04" },
+    { label: "Contact", href: "/contact", n: "05" },
   ],
   cta: "Book a Demo",
+  ctaHref: "/demo",
 };
 
 export const hero = {
@@ -164,12 +166,143 @@ export const footer = {
   name: "PraTej Solutions",
   tagline: "One Solution. Every Business.",
   links: [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#features" },
-    { label: "About", href: "#growth" },
-    { label: "Contact", href: "#cta" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
   socials: ["LinkedIn", "Twitter", "YouTube", "Instagram"],
   copyright: "© 2026 PraTej Solutions. All rights reserved.",
+};
+
+// ---------------------------------------------------------------------
+// Additional pages: About, Solutions, Services, Demo, Contact
+// ---------------------------------------------------------------------
+
+export const about = {
+  eyebrow: "Since 2019",
+  heading: "We build the operating system every Indian business deserves.",
+  intro:
+    "PraTej Solutions started with a simple frustration: the software that runs a 200-store mall chain shouldn't be the only option — and the corner kirana shouldn't be left with a paper ledger. So we built one platform that flexes to fit both.",
+  location: "PUNE, INDIA — 18.52°N 73.85°E",
+  philosophy: [
+    { title: "Built for the counter, not the boardroom", body: "Every feature ships tested at a real till first." },
+    { title: "Grow without switching tools", body: "One account scales from a single shop to a hundred branches." },
+    { title: "Data you can act on", body: "Insights that read like a story, not a spreadsheet dump." },
+    { title: "Support that answers the phone", body: "Real people, real fast, in the language you run your business in." },
+  ],
+  timeline: [
+    { year: "2019", title: "Founded", body: "Started as a billing tool for a single Pune kirana chain." },
+    { year: "2021", title: "Multi-branch launch", body: "Inventory sync across locations for growing retail chains." },
+    { year: "2023", title: "Enterprise tier", body: "Tenant management for shopping malls and department stores." },
+    { year: "2026", title: "500+ businesses", body: "Trusted across India, from single counters to corporate hubs." },
+  ],
+  stats: [
+    { value: "500+", label: "Businesses" },
+    { value: "40%", label: "Avg. efficiency gain" },
+    { value: "6", label: "Years running" },
+    { value: "24/7", label: "Support" },
+  ],
+};
+
+export const solutionsPage = {
+  eyebrow: "Solutions",
+  heading: "Retail Operations, Measured, Synced, Growth-Ready",
+  subheading:
+    "One platform that adapts to your scale — quantified with real usage data and built for real-world stores, not slideware.",
+  problem: {
+    eyebrow: "The Problem",
+    heading: "Most retail software picks a lane and stays there",
+    body:
+      "Point-of-sale tools for small shops don't scale to chains. Enterprise ERPs are too heavy for a single counter. Businesses outgrow their software, or overpay for capability they don't need yet.",
+    points: [
+      "Switching systems as you grow means losing history and retraining staff",
+      "Small-shop tools cap out fast; enterprise tools take months to onboard",
+      "Fragmented tools mean fragmented data across billing, stock, and loyalty",
+    ],
+  },
+  solution: {
+    eyebrow: "Our Solution",
+    heading: "One account. Every stage of growth.",
+    body:
+      "PraTej scales the same account from a single till to a hundred branches — no migration, no re-training, no lost history.",
+    points: [
+      "Real-time inventory sync across every branch, live",
+      "Role-based staff access that grows with your team",
+      "Analytics that read like a story — not a spreadsheet dump",
+    ],
+  },
+  steps: [
+    { n: "01", title: "Sign up in minutes", body: "No paperwork, no long onboarding calls — start billing the same day." },
+    { n: "02", title: "Sync your stock", body: "Import existing inventory or start fresh; sync propagates across branches instantly." },
+    { n: "03", title: "Watch it scale", body: "Add branches, staff, and loyalty programs as you grow — same account throughout." },
+  ],
+  sectors: [
+    "Grocery stores & kirana shops",
+    "Restaurants & cafes",
+    "Retail chains & boutiques",
+    "Shopping malls & department stores",
+  ],
+};
+
+export const servicesPage = {
+  eyebrow: "Services",
+  heading: "What we build for businesses like yours",
+  filters: ["All", "Billing", "Inventory", "Analytics", "Engagement"],
+  items: [
+    {
+      name: "Mehta Kirana Store",
+      title: "Billing & POS for a single-counter grocery",
+      body: "Fast checkout and simple stock counts on a POS that runs on any phone.",
+      tags: ["Billing", "Inventory"],
+      segment: "Small",
+    },
+    {
+      name: "Sharma Retail Chain",
+      title: "Multi-branch inventory sync for 12 stores",
+      body: "Synced stock and a shared loyalty program across every branch.",
+      tags: ["Inventory", "Engagement"],
+      segment: "Medium",
+    },
+    {
+      name: "Anand Mall Group",
+      title: "Enterprise dashboard for 200+ tenants",
+      body: "Tenant management and analytics from a single enterprise dashboard.",
+      tags: ["Analytics"],
+      segment: "Large",
+    },
+    {
+      name: "Growing Cafe Group",
+      title: "Loyalty campaigns that turn buyers into regulars",
+      body: "Customer engagement tools built for repeat business.",
+      tags: ["Engagement"],
+      segment: "Medium",
+    },
+  ],
+};
+
+export const demoPage = {
+  eyebrow: "Book a Demo",
+  heading: "See PraTej running on your own numbers",
+  subheading: "30 minutes with our team — no slideware, just your data in the platform.",
+  bullets: [
+    "Walkthrough tailored to your business size",
+    "Live Q&A with a product specialist",
+    "No commitment — cancel anytime before go-live",
+  ],
+  testimonial: {
+    quote: "The demo alone showed us stock gaps we didn't know we had.",
+    name: "Anita Sharma",
+    business: "Sharma Retail Chain",
+  },
+};
+
+export const contactPage = {
+  heading: "Contact",
+  intro: "Talk to PraTej Solutions about billing, inventory, analytics, or a custom rollout for your business.",
+  address: "Baner Road, Pune, Maharashtra, India",
+  email: "hello@pratejsolutions.com",
+  phone: "+91 98765 43210",
+  socials: ["LinkedIn", "Twitter", "Instagram"],
 };

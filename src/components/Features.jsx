@@ -6,6 +6,7 @@ import {
   MdFavorite,
 } from "react-icons/md";
 import { features } from "../data/content";
+import SpotlightCard from "./SpotlightCard";
 
 const iconMap = {
   inventory: MdInventory2,
@@ -42,13 +43,15 @@ export default function Features() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -6 }}
-                className={`glass rounded-3xl p-7 shadow-card ${spanClass}`}
+                className={spanClass}
               >
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${iconBg[i]} flex items-center justify-center mb-5 text-white text-2xl`}>
-                  <Icon />
-                </div>
-                <h3 className="font-ui text-lg font-semibold text-ink mb-2">{card.title}</h3>
-                <p className="text-sm text-inksoft font-body leading-relaxed">{card.description}</p>
+                <SpotlightCard className="glass rounded-3xl p-7 shadow-card h-full">
+                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${iconBg[i]} flex items-center justify-center mb-5 text-white text-2xl`}>
+                    <Icon />
+                  </div>
+                  <h3 className="font-ui text-lg font-semibold text-ink mb-2">{card.title}</h3>
+                  <p className="text-sm text-inksoft font-body leading-relaxed">{card.description}</p>
+                </SpotlightCard>
               </motion.div>
             );
           })}
