@@ -46,7 +46,7 @@ export default function PageIntro() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-display text-2xl sm:text-3xl font-semibold text-cream tracking-tight"
           >
-            Pra<span className="text-gradient">Tej</span> Solutions
+            Tech<span className="text-gradient">Solunizers</span>
           </motion.p>
         </motion.div>
       )}

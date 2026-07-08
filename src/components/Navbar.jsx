@@ -42,10 +42,8 @@ export default function Navbar() {
           }`}
         >
           <Link to="/" className="font-display text-lg md:text-xl font-semibold tracking-tight text-ink">
-            Pra<span className="text-gradient">Tej</span>
-            <span className="hidden sm:inline text-xs font-ui font-normal text-inksoft/60 ml-2 align-middle">
-              SOLUTIONS/2026
-            </span>
+            Tech<span className="text-gradient">Solunizers</span>
+            
           </Link>
 
           <ul className="hidden md:flex items-center gap-7 font-ui text-xs tracking-wide text-inksoft">
