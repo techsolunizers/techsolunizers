@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { servicesPage } from "../data/content";
-import SpotlightCard from "../components/SpotlightCard";
+import SpotlightCard from "../components/Spotlightcard";
 
 const segColor = { Small: "#3DD9B3", Medium: "#7C6CF6", Large: "#FF7A59" };
 
