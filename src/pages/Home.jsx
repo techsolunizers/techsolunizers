@@ -1,4 +1,4 @@
-import NothHero from "../components/Nothhero";
+import NothHero from "../components/NothHero";
 import BusinessSpectrum from "../components/BusinessSpectrum";
 import Features from "../components/Features";
 import GrowthChart from "../components/GrowthChart";
