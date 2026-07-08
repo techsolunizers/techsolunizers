@@ -1,8 +1,8 @@
-// All copy, testimonials, stats and chart data for the PraTej Solutions site.
+// All copy, testimonials, stats and chart data for the techsolunizers Solutions site.
 // Kept in one place so non-technical editors can update text without touching components.
 
 export const nav = {
-  logo: "PraTej",
+  logo: "TechSolunizers",
   logoSuffix: "Solutions",
   links: [
     { label: "Home", href: "/", n: "01" },
@@ -18,7 +18,7 @@ export const nav = {
 export const hero = {
   headline: "One Solution. Every Business. Unlimited Growth.",
   subheadline:
-    "From your neighborhood grocery store to the biggest malls — PraTej Solutions powers businesses of every size with one unified platform.",
+    "From your neighborhood grocery store to the biggest malls — TechSolunizers Solutions powers businesses of every size with one unified platform.",
   primaryCta: "Start Your Free Trial",
   secondaryCta: "See How It Works",
   trust: "Trusted by 500+ Businesses Across India",
@@ -27,7 +27,7 @@ export const hero = {
 export const spectrum = {
   heading: "Built for Every Business, Big or Small",
   description:
-    "One platform, three scales of ambition. Whichever segment you run today, PraTej grows with you into the next.",
+    "One platform, three scales of ambition. Whichever segment you run today, TechSolunizers grows with you into the next.",
   segments: [
     {
       tier: "Small",
@@ -127,7 +127,7 @@ export const testimonials = {
       name: "Anita Sharma",
       business: "Sharma Retail Chain, Ahmedabad",
       quote:
-        "Running twelve stores felt like twelve different businesses until PraTej synced our inventory and loyalty program across every branch.",
+        "Running twelve stores felt like twelve different businesses until TechSolunizers synced our inventory and loyalty program across every branch.",
       rating: 5,
       segment: "Medium",
     },
@@ -143,7 +143,7 @@ export const testimonials = {
 };
 
 export const stats = {
-  heading: "PraTej Solutions by the Numbers",
+  heading: "TechSolunizers Solutions by the Numbers",
   items: [
     { value: 500, suffix: "+", label: "Businesses Trust Us" },
     { value: 40, suffix: "%", label: "Average Efficiency Gain" },
@@ -157,13 +157,13 @@ export const finalCta = {
   subheading: "Join 500+ businesses that have already made the switch",
   cta: "Get Started Today",
   contact: {
-    email: "hello@pratejsolutions.com",
+    email: "hello@techsolunizerssolutions.com",
     phone: "+91 98765 43210",
   },
 };
 
 export const footer = {
-  name: "PraTej Solutions",
+  name: "TechSolunizers Solutions",
   tagline: "One Solution. Every Business.",
   links: [
     { label: "Home", href: "/" },
@@ -173,7 +173,7 @@ export const footer = {
     { label: "Contact", href: "/contact" },
   ],
   socials: ["LinkedIn", "Twitter", "YouTube", "Instagram"],
-  copyright: "© 2026 PraTej Solutions. All rights reserved.",
+  copyright: "© 2026 TechSolunizers Solutions. All rights reserved.",
 };
 
 // ---------------------------------------------------------------------
@@ -184,7 +184,7 @@ export const about = {
   eyebrow: "Since 2019",
   heading: "We build the operating system every Indian business deserves.",
   intro:
-    "PraTej Solutions started with a simple frustration: the software that runs a 200-store mall chain shouldn't be the only option — and the corner kirana shouldn't be left with a paper ledger. So we built one platform that flexes to fit both.",
+    "TechSolunizers Solutions started with a simple frustration: the software that runs a 200-store mall chain shouldn't be the only option — and the corner kirana shouldn't be left with a paper ledger. So we built one platform that flexes to fit both.",
   location: "PUNE, INDIA — 18.52°N 73.85°E",
   philosophy: [
     { title: "Built for the counter, not the boardroom", body: "Every feature ships tested at a real till first." },
@@ -226,7 +226,7 @@ export const solutionsPage = {
     eyebrow: "Our Solution",
     heading: "One account. Every stage of growth.",
     body:
-      "PraTej scales the same account from a single till to a hundred branches — no migration, no re-training, no lost history.",
+      "TechSolunizers scales the same account from a single till to a hundred branches — no migration, no re-training, no lost history.",
     points: [
       "Real-time inventory sync across every branch, live",
       "Role-based staff access that grows with your team",
@@ -284,7 +284,7 @@ export const servicesPage = {
 
 export const demoPage = {
   eyebrow: "Book a Demo",
-  heading: "See PraTej running on your own numbers",
+  heading: "See TechSolunizers running on your own numbers",
   subheading: "30 minutes with our team — no slideware, just your data in the platform.",
   bullets: [
     "Walkthrough tailored to your business size",
@@ -300,9 +300,9 @@ export const demoPage = {
 
 export const contactPage = {
   heading: "Contact",
-  intro: "Talk to PraTej Solutions about billing, inventory, analytics, or a custom rollout for your business.",
+  intro: "Talk to TechSolunizers Solutions about billing, inventory, analytics, or a custom rollout for your business.",
   address: "Baner Road, Pune, Maharashtra, India",
-  email: "hello@pratejsolutions.com",
+  email: "hello@techsolunizerssolutions.com",
   phone: "+91 98765 43210",
   socials: ["LinkedIn", "Twitter", "Instagram"],
 };
