@@ -6,7 +6,7 @@ import {
   MdFavorite,
 } from "react-icons/md";
 import { features } from "../data/content";
-import SpotlightCard from "./SpotlightCard";
+import SpotlightCard from "./Spotlightcard";
 
 const iconMap = {
   inventory: MdInventory2,
