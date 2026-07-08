@@ -25,7 +25,7 @@ const tooltipStyle = {
   fontSize: 13,
 };
 
-/** Three interconnected data visualizations proving business growth on PraTej. */
+/** Three interconnected data visualizations proving business growth on techsolunizers. */
 export default function GrowthChart() {
   return (
     <section id="growth" className="relative py-28 bg-cream">
@@ -68,7 +68,7 @@ export default function GrowthChart() {
             transition={{ delay: 0.1 }}
             className="glass rounded-3xl p-6 shadow-card"
           >
-            <h3 className="font-ui font-semibold mb-4 text-ink">Before vs. After PraTej</h3>
+            <h3 className="font-ui font-semibold mb-4 text-ink">Before vs. After TechSolunizers</h3>
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={growth.barData}>
                 <CartesianGrid stroke="rgba(27,27,24,0.08)" vertical={false} />

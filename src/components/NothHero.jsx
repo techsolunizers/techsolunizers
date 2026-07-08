@@ -7,7 +7,7 @@ import Marquee from "./Marquee.jsx";
 /**
  * Oversized, editorial-style hero inspired by noth.in's layout language:
  * huge stacked type, a small running index/counter, a thin manifesto
- * line, and a marquee strip beneath. Uses PraTej's real copy — this is
+ * line, and a marquee strip beneath. Uses techsolunizers's real copy — this is
  * a structural homage, not a copy of noth.in's content.
  */
 export default function NothHero() {
@@ -99,7 +99,7 @@ export default function NothHero() {
       </motion.div>
 
       <div className="border-t border-ink/8 py-6">
-        <Marquee text="PraTej Solutions — " speed={26} />
+        <Marquee text="TechSolunizers Solutions — " speed={26} />
       </div>
 
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 text-inksoft/50 text-xs tracking-widest animate-bounce">

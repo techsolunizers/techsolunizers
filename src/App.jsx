@@ -13,7 +13,7 @@ import Solutions from "./pages/Solutions";
 import Services from "./pages/Services";
 import Demo from "./pages/Demo";
 
-/** Multi-page PraTej Solutions site with route-level transitions. */
+/** Multi-page techsolunizers Solutions site with route-level transitions. */
 export default function App() {
   useSmoothScroll();
   const location = useLocation();

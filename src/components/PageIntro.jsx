@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function PageIntro() {
   const [show, setShow] = useState(() => {
     try {
-      return !sessionStorage.getItem("pratej_intro_seen");
+      return !sessionStorage.getItem("TechSolunizers_intro_seen");
     } catch {
       return true;
     }
@@ -22,7 +22,7 @@ export default function PageIntro() {
       setShow(false);
       document.body.style.overflow = "";
       try {
-        sessionStorage.setItem("pratej_intro_seen", "1");
+        sessionStorage.setItem("TechSolunizers_intro_seen", "1");
       } catch {
         /* ignore */
       }
