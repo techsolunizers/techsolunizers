@@ -4,7 +4,7 @@ import { howItWorks } from "../data/content";
 /** Three-step onboarding flow with a connecting line/arrow visualization. */
 export default function HowItWorks() {
   return (
-    <section id="how" className="relative py-28 bg-creamdeep overflow-hidden">
+    <section id="how" className="relative py-28 bg-sage overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

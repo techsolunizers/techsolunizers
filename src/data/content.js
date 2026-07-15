@@ -5,11 +5,11 @@ export const nav = {
   logo: "TechSolunizers",
   logoSuffix: "Solutions",
   links: [
-    { label: "Home", href: "/", n: "01" },
-    { label: "Solutions", href: "/solutions", n: "02" },
-    { label: "Services", href: "/services", n: "03" },
-    { label: "About", href: "/about", n: "04" },
-    { label: "Contact", href: "/contact", n: "05" },
+    { label: "Home", href: "/",},
+    { label: "Solutions", href: "/solutions",},
+    { label: "Services", href: "/services",},
+    { label: "About", href: "/about",},
+    { label: "Contact", href: "/contact",},
   ],
   cta: "Book a Demo",
   ctaHref: "/demo",
@@ -157,8 +157,8 @@ export const finalCta = {
   subheading: "Join 500+ businesses that have already made the switch",
   cta: "Get Started Today",
   contact: {
-    email: "hello@techsolunizerssolutions.com",
-    phone: "+91 98765 43210",
+    email: "techsolunizers@gmail.com",
+    phone: "+91 9834436508",
   },
 };
 
@@ -185,7 +185,7 @@ export const about = {
   heading: "We build the operating system every Indian business deserves.",
   intro:
     "TechSolunizers Solutions started with a simple frustration: the software that runs a 200-store mall chain shouldn't be the only option — and the corner kirana shouldn't be left with a paper ledger. So we built one platform that flexes to fit both.",
-  location: "PUNE, INDIA — 18.52°N 73.85°E",
+  
   philosophy: [
     { title: "Built for the counter, not the boardroom", body: "Every feature ships tested at a real till first." },
     { title: "Grow without switching tools", body: "One account scales from a single shop to a hundred branches." },
@@ -301,8 +301,8 @@ export const demoPage = {
 export const contactPage = {
   heading: "Contact",
   intro: "Talk to TechSolunizers Solutions about billing, inventory, analytics, or a custom rollout for your business.",
-  address: "Baner Road, Pune, Maharashtra, India",
-  email: "hello@techsolunizerssolutions.com",
-  phone: "+91 98765 43210",
+  address: "Alandi, Pune, Maharashtra, India",
+  email: "techsolunizers@gmail.com",
+  phone: "+91 9434436508",
   socials: ["LinkedIn", "Twitter", "Instagram"],
 };

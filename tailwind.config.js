@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Light SaaS palette inspired by Nuraform's soft, airy aesthetic
-        cream: "#FBF9F4",
-        creamdeep: "#F3EFE4",
+        // User custom color combinations
+        cream: "#E6F2DD",
+        creamdeep: "#B1D3B9",
+        sage: "#88BDA4",
+        sagedeep: "#659287",
         ink: "#1B1B18",
         inksoft: "#54524A",
         violet: "#7C6CF6",

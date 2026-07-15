@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { nav } from "../data/content";
 import Magnetic from "./Magnetic";
+import GooeyNav from "./GooeyNav";
+
+import logoImg from "../assets/logo.png";
 
 /**
  * Numbered nav bar inspired by mauriciojuba.com — a slim top bar with
@@ -14,6 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -41,28 +45,46 @@ export default function Navbar() {
             scrolled ? "glass shadow-card py-3" : "bg-transparent py-5"
           }`}
         >
-          <Link to="/" className="font-display text-lg md:text-xl font-semibold tracking-tight text-ink">
-            Tech<span className="text-gradient">Solunizers</span>
-            
+          <Link to="/" className="flex items-center gap-2 font-display text-lg md:text-xl font-semibold tracking-tight text-ink">
+            <img src={logoImg} alt="TechSolunizers Logo" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
+            <span>Tech<span className="text-gradient">Solunizers</span></span>
           </Link>
 
-          <ul className="hidden md:flex items-center gap-7 font-ui text-xs tracking-wide text-inksoft">
-            {nav.links.map((l) => (
-              <li key={l.href}>
-                <Link
-                  to={l.href}
-                  className={`hover:text-ink transition-colors ${
-                    location.pathname === l.href ? "text-ink font-semibold" : ""
-                  }`}
-                >
-                  {l.n}/{l.label.toUpperCase()}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div
+            className="hidden md:flex items-center rounded-full px-1 py-0.5 font-ui text-xs tracking-wide overflow-hidden"
+            style={{
+              background: '#1B1B18',
+              '--color-1': '#7C6CF6',
+              '--color-2': '#3DD9B3',
+              '--color-3': '#5EA0F7',
+              '--color-4': '#FF7A59',
+            }}
+          >
+            <GooeyNav
+              items={nav.links.map((l) => ({
+                label: l.label.toUpperCase(),
+                href: l.href,
+                onClick: () => navigate(l.href),
+              }))}
+              initialActiveIndex={Math.max(0, nav.links.findIndex((l) => l.href === location.pathname))}
+              particleCount={15}
+              particleDistances={[90, 10]}
+              particleR={100}
+              animationTime={600}
+              timeVariance={300}
+              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+            />
+          </div>
 
-          <div className="hidden md:flex items-center gap-5">
-            <span className="font-ui text-[11px] tabular-nums text-inksoft/50 tracking-wide">{time} IST</span>
+          <div className="hidden md:flex items-center gap-3">
+            <Magnetic strength={0.3}>
+              <Link
+                to="/login"
+                className="btn-pill font-ui text-sm font-medium px-5 py-2.5 border border-ink/20 text-ink hover:bg-ink/5 transition-all inline-block"
+              >
+                Login
+              </Link>
+            </Magnetic>
             <Magnetic strength={0.3}>
               <Link
                 to={nav.ctaHref}
@@ -73,6 +95,7 @@ export default function Navbar() {
             </Magnetic>
           </div>
 
+           
           <button
             aria-label="Toggle menu"
             className="md:hidden text-ink text-2xl z-[60]"
@@ -111,7 +134,13 @@ export default function Navbar() {
                 </motion.li>
               ))}
             </ul>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-10">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="mt-10 flex gap-4">
+              <Link
+                to="/login"
+                className="inline-block btn-pill font-ui font-semibold px-6 py-4 border border-cream/30 text-cream"
+              >
+                Login
+              </Link>
               <Link
                 to={nav.ctaHref}
                 className="inline-block btn-pill font-ui font-semibold px-8 py-4 bg-cream text-ink"

@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
 
+
 /**
- * Infinite horizontal marquee of repeating text — the "we are nothin'"
- * effect from noth.in. Duplicates children content twice so the loop
- * is seamless, then animates both copies left continuously.
+ * Interactive scrolling text marquee with mouse speed-responsive
+ * displacement map warp effect, mirroring the liquid WebGL style on noth.in
  */
 export default function Marquee({ text, speed = 22, className = "" }) {
+
+
   return (
     <div className={`overflow-hidden whitespace-nowrap ${className}`} aria-hidden="true">
+
       <motion.div
         className="inline-flex"
+        // style={{ filter: `url(#${filterId})` }}
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
       >

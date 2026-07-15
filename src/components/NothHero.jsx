@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { hero } from "../data/content";
 import Magnetic from "./Magnetic";
 import Marquee from "./Marquee.jsx";
+import Threads from "./Threads.jsx";
 
 /**
  * Oversized, editorial-style hero inspired by noth.in's layout language:
@@ -21,11 +22,14 @@ export default function NothHero() {
 
   return (
     <section ref={sectionRef} id="home" className="relative min-h-screen bg-cream overflow-hidden flex flex-col">
-      <motion.div style={{ opacity: fade, y: rise }} className="flex-1 flex flex-col justify-center px-6 pt-28">
+      {/* Dynamic Threads background matching the green/sage color palette */}
+      <Threads color={[0.396, 0.573, 0.529]} amplitude={1.8} distance={0.15} enableMouseInteraction={true} />
+
+      <motion.div style={{ opacity: fade, y: rise }} className="relative z-10 flex-1 flex flex-col justify-center px-6 pt-28">
         <div className="max-w-7xl mx-auto w-full">
           <div className="flex items-center justify-between font-ui text-xs tracking-[0.2em] uppercase text-inksoft/60 mb-8">
-            <span>( Unified Business Platform )</span>
-            <span>Pune, India</span>
+            
+            
           </div>
 
           <motion.h1
@@ -99,12 +103,10 @@ export default function NothHero() {
       </motion.div>
 
       <div className="border-t border-ink/8 py-6">
-        <Marquee text="TechSolunizers Solutions — " speed={26} />
+        <Marquee text="TechSolunizers — " speed={26} />
       </div>
 
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 text-inksoft/50 text-xs tracking-widest animate-bounce">
-        SCROLL
-      </div>
+      
     </section>
   );
 }

@@ -20,7 +20,7 @@ const iconBg = ["from-violet to-skyblue", "from-coral to-violet", "from-mint to-
 /** Bento-style grid of feature cards, light frosted cards on cream. */
 export default function Features() {
   return (
-    <section id="features" className="relative py-28 bg-creamdeep">
+    <section id="features" className="relative py-28 bg-sage">
       <div className="max-w-6xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
