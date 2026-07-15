@@ -118,6 +118,10 @@ void main() {
 }
 `;
 
+// Throttle interval: ~30fps keeps the ambient animation smooth while
+// freeing the main thread / GPU for the marquee and page transitions.
+const FRAME_INTERVAL = 1000 / 30;
+
 export default function Threads({ color = [1, 1, 1], amplitude = 1, distance = 0, enableMouseInteraction = false, ...rest }) {
   const containerRef = useRef(null);
   const animationFrameId = useRef(0);
@@ -157,8 +161,11 @@ export default function Threads({ color = [1, 1, 1], amplitude = 1, distance = 0
     const MAX_RENDER_DIM = 1920;
     function resize() {
       const { clientWidth, clientHeight } = container;
-      // Cap DPR at 0.85 max for high performance and smooth scrolling on high-DPI screens
-      const baseDpr = Math.min(window.devicePixelRatio || 1, 0.85);
+      // Cap DPR at 1.5 to reduce pixel count on retina/high-DPI screens.
+      // The old value of 0.85 was a bug — it forced DPR below 1 on standard
+      // screens, causing unnecessary blur. 1.5 keeps things crisp on 1x
+      // screens while still capping GPU work on 2x/3x displays.
+      const baseDpr = Math.min(window.devicePixelRatio || 1, 1.5);
       const longestSide = Math.max(clientWidth, clientHeight) * baseDpr;
       const dpr = longestSide > MAX_RENDER_DIM ? (baseDpr * MAX_RENDER_DIM) / longestSide : baseDpr;
       renderer.dpr = dpr;
@@ -197,9 +204,20 @@ export default function Threads({ color = [1, 1, 1], amplitude = 1, distance = 0
     );
     intersectionObserver.observe(container);
 
+    // Track the last render time for 30fps throttling
+    let lastRenderTime = 0;
+
     function update(t) {
       animationFrameId.current = requestAnimationFrame(update);
+
+      // Skip if not visible or tab is hidden
       if (!isVisible || document.hidden) return;
+
+      // Throttle to ~30fps — the ambient thread animation doesn't need 60fps
+      // and this frees the main thread / GPU for the CSS marquee animation
+      const delta = t - lastRenderTime;
+      if (delta < FRAME_INTERVAL) return;
+      lastRenderTime = t - (delta % FRAME_INTERVAL);
 
       const { color: c, amplitude: a, distance: d, enableMouseInteraction: emi } = propsRef.current;
 

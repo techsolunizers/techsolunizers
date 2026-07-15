@@ -35,6 +35,7 @@ export default function PageIntro() {
       {show && (
         <motion.div
           className="fixed inset-0 z-[10000] bg-ink flex items-center justify-center"
+          style={{ willChange: "transform" }}
           initial={{ opacity: 1 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}

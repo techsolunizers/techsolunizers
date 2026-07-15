@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { hero } from "../data/content";
 import Magnetic from "./Magnetic";
@@ -20,10 +20,21 @@ export default function NothHero() {
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const rise = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
+  // Defer mounting the WebGL Threads component until after the page intro
+  // finishes (~1.5s). This prevents the shader init from fighting the
+  // intro curtain animation for GPU time, eliminating the opening lag.
+  const [showThreads, setShowThreads] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowThreads(true), 1600);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section ref={sectionRef} id="home" className="relative min-h-screen bg-cream overflow-hidden flex flex-col">
       {/* Dynamic Threads background matching the green/sage color palette */}
-      <Threads color={[0.396, 0.573, 0.529]} amplitude={1.8} distance={0.15} enableMouseInteraction={true} />
+      {showThreads && (
+        <Threads color={[0.396, 0.573, 0.529]} amplitude={1.8} distance={0.15} enableMouseInteraction={true} />
+      )}
 
       <motion.div style={{ opacity: fade, y: rise }} className="relative z-10 flex-1 flex flex-col justify-center px-6 pt-28">
         <div className="max-w-7xl mx-auto w-full">

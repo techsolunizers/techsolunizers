@@ -146,6 +146,23 @@ body {
 }
 
 /* ═══════════════════════════════════════
+   MARQUEE — compositor-thread animation
+═══════════════════════════════════════ */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-scroll {
+  animation: marquee-scroll var(--marquee-duration, 22s) linear infinite;
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════
    LOGIN PAGE — save.design inspired
 ═══════════════════════════════════════ */
 .login-bg {
